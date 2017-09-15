@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Recordatorios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<p>Ingrese los siguientes datos para recordarle cuando debe tomar su medicamento.</p>
+	<ion-item>
+	  <ion-label>Primera Vez</ion-label>
+	  <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" placeholder="12:00 AM" [(ngModel)]="myDate"></ion-datetime>
+	</ion-item>
+	<ion-item>
+	  <ion-label>Frecuencia</ion-label>
+	  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" placeholder="04:00" [(ngModel)]="myTime"></ion-datetime>
+	</ion-item>
+
+
+	<button ion-button block padding (click)="addRecord()">
+  		<ion-label>Guardar Recordatorio</ion-label>
+	</button>
+</ion-content>
