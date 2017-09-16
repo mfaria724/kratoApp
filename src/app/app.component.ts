@@ -10,21 +10,22 @@ import { RecordatoriosPage } from '../pages/recordatorios/recordatorios';
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = PromosPage;
   activePage: any;
 
-  pages: Array<{title: string, component: any, icon: string}>;
+  pages: Array<{title: string, component: any, icon: string, color: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public alertCtrl: AlertController) {
     this.initializeApp();
 
     // Arreglo usado pata creacion de menu con ngFor
     this.pages = [
-      { title: 'Promociones', component: PromosPage, icon:"pricetags" },
-      { title: 'Recordatorios', component: RecordatoriosPage, icon:"clock" }
+      { title: 'Promociones', component: PromosPage, icon:"pricetags", color:'promos' },
+      { title: 'Recordatorios', component: RecordatoriosPage, icon:"clock", color:'recordatorios' }
     ];
 
     this.activePage = this.pages[0];
@@ -63,7 +64,15 @@ export class MyApp {
     
   }
 
-  checkActive(page){
-    return page === this.activePage;
+  checkColor(page){
+
+    var classes = {};
+    classes[page.color] = true;
+
+    if (page === this.activePage){
+      return classes;  
+    }
   }
+
+
 }

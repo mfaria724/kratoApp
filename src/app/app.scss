@@ -19,3 +19,13 @@
 .activeHighLight {
 	background-color: map-get($colors, light);
 }
+
+.recordatorios {
+	background-color: map-get($colors, recordatorios);
+	color: white;
+}
+
+.promos {
+	background-color: map-get($colors, promos);
+	color: white;
+}

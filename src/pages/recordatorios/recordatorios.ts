@@ -51,6 +51,6 @@ export class RecordatoriosPage {
     } else {
       window.localStorage['recordatorio'] = horas + ":" +  minutos + " a.m.";   
     }
-    
+
   }
 }
